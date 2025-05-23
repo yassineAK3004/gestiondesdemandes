@@ -1,0 +1,267 @@
+/* src/index.css */
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Section */
+.hero {
+  background: url("https://media.licdn.com/dms/image/v2/C561BAQESE2JpCHE8tQ/company-background_10000/company-background_10000/0/1584356739576/ensa_eljadida_cover?e=2147483647&v=beta&t=mMNfIbwsAD4eNvvFlBEZZ58s2C1_VXtuFUp3UDg2cks ") center / cover no-repeat;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 4rem 1rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  animation: fadeIn 1.5s forwards;
+}
+
+.hero .btn {
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  animation: fadeIn 2.5s forwards;
+}
+
+/* Image Section */
+.image-section {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+/* Features Cards */
+.features {
+  padding: 3rem 1rem;
+  background-color: #f9fafb;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card a {
+  color: #2563eb;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Login Page */
+.login-container {
+  background: linear-gradient(to right top, #f3f4f6, #e5e7eb);
+}
+
+.login-card {
+  max-width: 900px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-image {
+  background-image: url("https://media.licdn.com/dms/image/v2/C561BAQESE2JpCHE8tQ/company-background_10000/company-background_10000/0/1584356739576/ensa_eljadida_cover?e=2147483647&v=beta&t=mMNfIbwsAD4eNvvFlBEZZ58s2C1_VXtuFUp3UDg2cks ");
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(29, 78, 216, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.overlay:hover {
+  background: rgba(29, 78, 216, 0.9);
+}
+
+.overlay h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-image {
+    display: none !important;
+  }
+
+  .login-card .card-body {
+    padding: 2rem;
+  }
+} 
+
+
+ /*admin dashboard*/
+ .border-left-primary {
+    border-left: 4px solid #3b82f6 !important;
+}
+
+.border-left-info {
+    border-left: 4px solid #0ea5e9 !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+
+/* Hover sur carte admin */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Style des popups */
+.modal-body input,
+.modal-body textarea {
+    margin-bottom: 1rem;
+}
+
+/* Bordures colorées pour indicateurs */
+.border-left-primary {
+    border-left: 4px solid #3b82f6 !important;
+}
+
+.border-left-info {
+    border-left: 4px solid #0ea5e9 !important;
+}
+
+/* Responsive cards */
+@media (max-width: 768px) {
+    .admin-dashboard .card h2 {
+        font-size: 1.2rem;
+    }
+}
